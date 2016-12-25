@@ -1,5 +1,7 @@
 # gavu
 
+Use `npm link` where in code directory to add module to global.
+
 # TODO
 
 * gavu init til at læse fra ENV hvis de findes for at lave config
