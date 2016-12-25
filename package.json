@@ -1,0 +1,17 @@
+{
+  "name": "gavu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node $npm_package_main",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Kokott",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.7.7",
+    "treehash": "0.0.5",
+    "vorpal": "^1.11.4"
+  }
+}
