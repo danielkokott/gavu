@@ -2,11 +2,13 @@
   "name": "gavu",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
   "scripts": {
-    "start": "node $npm_package_main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "gavu": "lib/index.js"
+  },
+  "preferGlobal": true,
   "author": "Daniel Kokott",
   "license": "ISC",
   "dependencies": {
