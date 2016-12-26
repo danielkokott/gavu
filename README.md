@@ -40,3 +40,90 @@ Download files from vault
 ## jobs
 
 View active jobs
+
+# Glacier data output examples
+
+## listVaults
+
+{
+  VaultList: [
+    {
+      VaultARN: 'arn:aws:glacier:eu-west-1:622824714146:vaults/Photos',
+      VaultName: 'Photos',
+      CreationDate: '2014-06-28T07:39:32.915Z',
+      LastInventoryDate: null,
+      NumberOfArchives: 0,
+      SizeInBytes: 0
+    },
+    {
+      VaultARN: 'arn:aws:glacier:eu-west-1:622824714146:vaults/TestPhotos',
+      VaultName: 'TestPhotos',
+      CreationDate: '2016-11-27T15:22:49.881Z',
+      LastInventoryDate: '2016-11-28T04:11:37.693Z',
+      NumberOfArchives: 1,
+      SizeInBytes: 2783065
+    }
+  ],
+  Marker: null
+}
+
+## uploadArchive
+
+{
+  location: '/622824714146/vaults/TestPhotos/archives/scGlBBfgo08FgerK387BWpIe_SQ4y0sEk2q9y6aSnZbM3MthdvnUkHTHhSuRjgtigesiEnMYWM7pyIq5-WmqwKOcG4wVM-jWvGhBZGQypWinIzK27e8hMi9H9HO_y1WKSnDbo31ZOQ',
+  checksum: '34eb791ca2c85793319a11896a790003c9278ce363efc39dcae7e5983ef55694',
+  archiveId: 'scGlBBfgo08FgerK387BWpIe_SQ4y0sEk2q9y6aSnZbM3MthdvnUkHTHhSuRjgtigesiEnMYWM7pyIq5-WmqwKOcG4wVM-jWvGhBZGQypWinIzK27e8hMi9H9HO_y1WKSnDbo31ZOQ'
+}
+
+
+## initiateJob
+
+{
+  location: '/622824714146/vaults/TestPhotos/jobs/r3zaiU54d_p0izvDbQh1PnnIuCXpu9tZr3Ka1BqUmsfgb99NyoAWQfK3WntFQQPgTfVjAzUNHSd4WMEC5b9oOv41crdq',
+  jobId: 'r3zaiU54d_p0izvDbQh1PnnIuCXpu9tZr3Ka1BqUmsfgb99NyoAWQfK3WntFQQPgTfVjAzUNHSd4WMEC5b9oOv41crdq'
+}
+
+
+## listJobs
+
+{
+  JobList: [
+    {
+      JobId: 'r3zaiU54d_p0izvDbQh1PnnIuCXpu9tZr3Ka1BqUmsfgb99NyoAWQfK3WntFQQPgTfVjAzUNHSd4WMEC5b9oOv41crdq',
+      JobDescription: 'Retrieving the inventory',
+      Action: 'InventoryRetrieval',
+      ArchiveId: null,
+      VaultARN: 'arn:aws:glacier:eu-west-1:622824714146:vaults/TestPhotos',
+      CreationDate: '2016-12-25T22:22:41.423Z',
+      Completed: true,
+      StatusCode: 'Succeeded',
+      StatusMessage: 'Succeeded',
+      ArchiveSizeInBytes: null,
+      InventorySizeInBytes: 462,
+      SNSTopic: null,
+      CompletionDate: '2016-12-26T02:39:44.113Z',
+      SHA256TreeHash: null,
+      ArchiveSHA256TreeHash: null,
+      RetrievalByteRange: null,
+      Tier: null,
+      InventoryRetrievalParameters: [Object]
+    }
+  ],
+  Marker: null
+}
+
+
+## Inventory
+
+{
+  VaultARN: 'arn:aws:glacier:eu-west-1:622824714146:vaults/TestPhotos',
+  InventoryDate: '2016-11-28T03:35:02Z',
+  ArchiveList: [
+  {
+    ArchiveId: 'scGlBBfgo08FgerK387BWpIe_SQ4y0sEk2q9y6aSnZbM3MthdvnUkHTHhSuRjgtigesiEnMYWM7pyIq5-WmqwKOcG4wVM-jWvGhBZGQypWinIzK27e8hMi9H9HO_y1WKSnDbo31ZOQ',
+    ArchiveDescription: '2006-10/DSCF3481.JPG',
+    CreationDate: '2016-11-27T15:41:44Z',
+    Size: 2750297,
+    SHA256TreeHash: '34eb791ca2c85793319a11896a790003c9278ce363efc39dcae7e5983ef55694'
+  }]
+}
