@@ -5,6 +5,13 @@ Use `npm link` where in code directory to add module to global.
 # TODO
 
 * gavu init til at læse fra ENV hvis de findes for at lave config
+* gavu add til at lave en liste over filer der skal uploades
+* gavu status til at lave en oversigt over filer der er uploaded, skal uploades, ikke er "added" eller ikke er downloaded
+* gavu push skal uploade alle filer der er "added"
+* gavu fetch skal finde afsluttede jobs med Action=InventoryRetrieval og downloade inventory
+* gavu pull skal downloade en eller flere filer
+
+Lav den eventuelt sådan at programmet venter på at jobs melder tilbage via SNS og så downloader filerne automatisk
 
 # Commands
 
@@ -33,7 +40,7 @@ Add files to upload
 Upload added files to vault
 
 
-## clone
+## pull
 
 Download files from vault
 
