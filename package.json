@@ -14,8 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.7.7",
-    "commander": "^2.9.0",
-    "treehash": "0.0.5",
-    "vorpal": "^1.11.4"
+    "treehash": "0.0.5"
   }
 }
